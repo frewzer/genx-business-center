@@ -1,0 +1,2063 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GenX Business Center | Habesha Cultural Dresses &amp; Authentic Ethiopian Spices</title>
+  <meta name="description" content="GenX Business Center — Authentic Handwoven Habesha Cultural Dresses and Sun-Cured Ethiopian Spices. Sourced directly from Dorze highland weavers and Wollo spice farmers.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans (Nixtio WoodNest Style) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            pine: {
+              950: '#0B130E',
+              900: '#111D16',
+              850: '#16241C',
+              800: '#1E3126',
+              700: '#2A4335',
+              600: '#3D5E4C',
+              100: '#E7EFEA',
+              50: '#F2F7F4'
+            },
+            linen: {
+              50: '#FAF8F4',
+              100: '#F4EFE6',
+              200: '#EAE1D3',
+              300: '#DDD1BD',
+              400: '#C7B79E'
+            },
+            cedar: {
+              DEFAULT: '#8C5A32',
+              deep: '#6F4320',
+              light: '#AA7445'
+            },
+            amberAccent: {
+              DEFAULT: '#D48C46',
+              deep: '#BD7632',
+              glow: '#F6B774'
+            },
+            charcoal: '#1A211D'
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif']
+          },
+          boxShadow: {
+            'soft': '0 10px 30px -10px rgba(17, 29, 22, 0.07)',
+            'float': '0 20px 40px -15px rgba(17, 29, 22, 0.12)',
+            'card-hover': '0 25px 45px -12px rgba(17, 29, 22, 0.16)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --bg-cream: #F8F5EE;
+      --pine-dark: #111D16;
+      --cedar-accent: #8C5A32;
+      --amber-warm: #D48C46;
+    }
+
+    body {
+      background-color: var(--bg-cream);
+      color: #1A211D;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* WoodNest Style Card Soft Corners */
+    .woodnest-card {
+      border-radius: 1.25rem;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      border: 1px solid rgba(221, 209, 189, 0.45);
+    }
+
+    .woodnest-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 45px -12px rgba(17, 29, 22, 0.14);
+      border-color: rgba(212, 140, 70, 0.4);
+    }
+
+    /* Floating Glassmorphism Navigation & Widgets */
+    .glass-pill {
+      background: rgba(250, 248, 244, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+    }
+
+    .glass-pill-dark {
+      background: rgba(17, 29, 22, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    /* Ambient Warmth Texture */
+    .ambient-grain {
+      background-image:
+        radial-gradient(rgba(140, 90, 50, 0.05) 1px, transparent 0),
+        linear-gradient(to bottom, transparent, rgba(244, 239, 230, 0.4));
+      background-size: 28px 28px, 100% 100%;
+    }
+
+    /* Monogram Foil Stamp */
+    .embossed-gold {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      background: linear-gradient(135deg, #FFE4A0 0%, #D48C46 50%, #91541D 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Drawer & Modal Transitions */
+    .drawer {
+      transform: translateX(100%);
+      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .drawer.open {
+      transform: translateX(0);
+    }
+
+    .scrim {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+    }
+
+    .scrim.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Accordion styles */
+    .acc-body {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .acc-body>div {
+      overflow: hidden;
+    }
+
+    .acc.open .acc-body {
+      grid-template-rows: 1fr;
+    }
+
+    .acc.open .acc-icon {
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+
+<body class="selection:bg-amberAccent selection:text-white ambient-grain">
+
+  <!-- TOAST NOTIFICATIONS -->
+  <div id="toastContainer" class="fixed bottom-6 right-6 z-[100] flex flex-col gap-3 pointer-events-none"></div>
+
+  <!-- FLOATING ANNOUNCEMENT BANNER -->
+  <aside aria-label="Announcement"
+    class="bg-pine-950 text-linen-100 text-[11px] tracking-widest uppercase py-2 px-4 border-b border-pine-800">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+
+      <!-- Currency Switcher -->
+      <div class="flex items-center gap-2">
+        <span class="text-zinc-400 hidden sm:inline">Region:</span>
+        <select id="currencySelect" aria-label="Select currency"
+          class="bg-transparent border border-pine-700 rounded-full px-2.5 py-0.5 text-[10px] text-linen-100 focus:outline-none cursor-pointer">
+          <option value="USD" class="bg-pine-900 text-white">USD ($)</option>
+          <option value="EUR" class="bg-pine-900 text-white">EUR (€)</option>
+          <option value="GBP" class="bg-pine-900 text-white">GBP (£)</option>
+        </select>
+      </div>
+
+      <!-- Center Rotating Message -->
+      <div class="font-medium text-amberAccent truncate px-2 text-center flex-1">
+        <span id="announcementTicker">✦ Handwoven Habesha Dresses &amp; Sun-Cured Spices · Complimentary Global Delivery Over $100 ✦</span>
+      </div>
+
+      <!-- Coordinates Tag -->
+      <div class="hidden md:flex items-center gap-2 text-zinc-400 text-[10px]">
+        <span>Dorze Weavers · Wollo Spices</span>
+        <span class="w-1 h-1 rounded-full bg-amberAccent"></span>
+        <span>100% Authentic Ethiopian</span>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- NIXTIO STYLE FLOATING PILL NAVIGATION -->
+  <div class="sticky top-4 z-40 max-w-7xl mx-auto px-4 sm:px-6">
+    <header
+      class="glass-pill shadow-soft rounded-full px-5 py-3 flex items-center justify-between transition-all duration-300">
+
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-2.5 group">
+        <div
+          class="w-9 h-9 rounded-full bg-pine-900 text-amberAccent flex items-center justify-center font-serif text-sm font-bold shadow-sm group-hover:scale-105 transition-transform tracking-tight">
+          GX
+        </div>
+        <div>
+          <span class="font-serif text-xl sm:text-2xl font-bold tracking-tight text-pine-950 block leading-none">
+            GenX Business Center
+          </span>
+          <span class="text-[9px] tracking-[0.25em] uppercase font-bold text-cedar block mt-0.5">
+            Habesha Cultural Dresses &amp; Spices
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Pill Links -->
+      <nav class="hidden lg:flex items-center gap-1 bg-linen-100/90 rounded-full p-1 border border-linen-200">
+        <a href="#shop" data-filter="all"
+          class="nav-pill px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider text-pine-950 hover:bg-white transition-all shadow-sm">
+          All Works
+        </a>
+        <a href="#shop" data-filter="apparel"
+          class="nav-pill px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider text-pine-850 hover:bg-white transition-all">
+          Habesha Dresses
+        </a>
+        <a href="#shop" data-filter="spices"
+          class="nav-pill px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider text-pine-850 hover:bg-white transition-all">
+          Sacred Spices
+        </a>
+        <a href="#sanctuary"
+          class="nav-pill px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider text-cedar hover:bg-white transition-all">
+          Heritage &amp; Guilds
+        </a>
+      </nav>
+
+      <!-- Right Header Actions (Search, Wishlist, Cart, Mobile Toggle) -->
+      <div class="flex items-center gap-2 sm:gap-3">
+
+        <!-- Live Search Button -->
+        <button id="searchTriggerBtn" aria-label="Search collection"
+          class="w-9 h-9 rounded-full bg-linen-100 hover:bg-linen-200 text-pine-900 flex items-center justify-center transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="7" />
+            <path stroke-linecap="round" d="M16.5 16.5l4.5 4.5" />
+          </svg>
+        </button>
+
+        <!-- Wishlist -->
+        <button id="wishlistTriggerBtn" aria-label="View saved pieces"
+          class="relative w-9 h-9 rounded-full bg-linen-100 hover:bg-linen-200 text-pine-900 flex items-center justify-center transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+          </svg>
+          <span id="wishCount"
+            class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-amberAccent text-white font-bold text-[9px] grid place-items-center shadow-sm">0</span>
+        </button>
+
+        <!-- Cart Pill Button -->
+        <button id="cartBtn" aria-label="Open Cart Drawer"
+          class="flex items-center gap-2 bg-pine-900 hover:bg-pine-850 text-linen-50 rounded-full px-4 py-2 text-xs font-semibold transition shadow-sm">
+          <svg class="w-4 h-4 text-amberAccent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25c-.67 0-1.19-.578-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+          </svg>
+          <span id="cartCountBadge"
+            class="font-bold text-[11px] bg-amberAccent text-pine-950 px-1.5 py-0.2 rounded-full">0</span>
+          <span id="headerSubtotal"
+            class="hidden sm:inline font-serif font-semibold text-xs tracking-wide text-linen-100">$0.00</span>
+        </button>
+
+        <!-- Mobile Menu Hamburger -->
+        <button id="mobileMenuBtn" class="lg:hidden p-2 text-pine-900" aria-label="Toggle navigation menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+
+      </div>
+
+    </header>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobileMenu"
+      class="hidden lg:hidden mt-2 bg-linen-50 border border-linen-200 rounded-2xl p-4 shadow-float space-y-2 text-sm font-semibold text-pine-900">
+      <a href="#shop" data-filter="all" class="block py-1.5 px-3 rounded-lg hover:bg-linen-100">All Works</a>
+      <a href="#shop" data-filter="apparel" class="block py-1.5 px-3 rounded-lg hover:bg-linen-100">Habesha Cultural Dresses</a>
+      <a href="#shop" data-filter="spices" class="block py-1.5 px-3 rounded-lg hover:bg-linen-100">Sacred Ethiopian Spices</a>
+      <a href="#sanctuary" class="block py-1.5 px-3 rounded-lg text-cedar hover:bg-linen-100">Artisan Guild Heritage</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO SECTION: HABESHA DRESSES & AUTHENTIC SPICES CURATION -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 pt-6 pb-20">
+      <div
+        class="relative rounded-3xl overflow-hidden shadow-2xl min-h-[580px] lg:min-h-[660px] flex flex-col justify-between p-6 sm:p-10 lg:p-14">
+
+        <!-- Cinematic Heritage Background Image -->
+        <img src="home.png" alt="Ethiopian highlands and cultural heritage"
+          class="absolute inset-0 w-full h-full object-cover">
+
+        <!-- Gradient Overlays for Depth and Readability -->
+        <div class="absolute inset-0 bg-gradient-to-t from-pine-950 via-pine-950/40 to-pine-950/20"></div>
+
+        <!-- Top Hero Pill Badges -->
+        <div class="relative z-10 flex flex-wrap items-center justify-between gap-3">
+          <div
+            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-pill-dark text-linen-100 text-xs font-semibold tracking-wider">
+            <span class="w-2 h-2 rounded-full bg-amberAccent animate-pulse"></span>
+            <span>Dorze Highland Handloom · Wollo Spice Harvest 2026</span>
+          </div>
+
+          <div
+            class="hidden sm:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pine-900/60 backdrop-blur-md text-amberAccent text-xs border border-white/10">
+            <span>★ 4.98 Master Patron Score</span>
+            <span class="text-white/40">|</span>
+            <span class="text-linen-100">100% Direct Guild Trade</span>
+          </div>
+        </div>
+
+        <!-- Center Editorial Headline -->
+        <div class="relative z-10 my-auto py-12 max-w-2xl text-left">
+          <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl font-normal text-white leading-[1.05]">
+            Habesha Splendor. <br>
+            <span class="italic font-normal text-amberAccent">Handwoven Dresses &amp; Sacred Spices.</span>
+          </h1>
+          <p class="mt-4 text-base sm:text-lg text-linen-100/90 font-light leading-relaxed max-w-xl">
+            Ethereal organic highland cotton spun on ancestral drop-spindles in Chencha, paired with centuries-old stone-ground Berbere, Shiro, and Mitmita harvested directly from Wollo and Rift Valley terraces.
+          </p>
+        </div>
+
+        <!-- SIGNATURE FLOATING CURATION WIDGET (OVERLAPPING HERO) -->
+        <div
+          class="relative z-20 mt-6 bg-white/95 backdrop-blur-xl border border-white/80 rounded-2xl sm:rounded-full p-3 sm:p-2.5 shadow-2xl">
+          <div class="grid grid-cols-1 sm:grid-cols-4 gap-3 sm:gap-2 items-center text-xs">
+
+            <!-- Field 1: Category / Craft Type -->
+            <div class="px-4 py-2 sm:border-r border-linen-200">
+              <label for="filterCategory" class="block text-[10px] uppercase font-bold tracking-widest text-cedar">The Collection</label>
+              <select id="filterCategory" aria-label="Select collection"
+                class="w-full bg-transparent font-semibold text-pine-950 text-xs focus:outline-none cursor-pointer mt-0.5">
+                <option value="all">All Master Works (6)</option>
+                <option value="apparel">Habesha Cultural Dresses (3)</option>
+                <option value="spices">Sacred Ethiopian Spices (3)</option>
+              </select>
+            </div>
+
+            <!-- Field 2: Region / Terroir -->
+            <div class="px-4 py-2 sm:border-r border-linen-200">
+              <label for="filterRegion"
+                class="block text-[10px] uppercase font-bold tracking-widest text-cedar">Highland Origin</label>
+              <select id="filterRegion" aria-label="Select origin"
+                class="w-full bg-transparent font-semibold text-pine-950 text-xs focus:outline-none cursor-pointer mt-0.5">
+                <option value="all">All Origins &amp; Guilds</option>
+                <option value="Dorze">Dorze Highlands (Chencha Weavers)</option>
+                <option value="Wollo">Wollo Terraces (Spice Growers)</option>
+              </select>
+            </div>
+
+            <!-- Field 3: Investment / Sort -->
+            <div class="px-4 py-2 sm:border-r border-linen-200">
+              <label for="filterSort" class="block text-[10px] uppercase font-bold tracking-widest text-cedar">Curated Ordering</label>
+              <select id="filterSort" aria-label="Sort selection"
+                class="w-full bg-transparent font-semibold text-pine-950 text-xs focus:outline-none cursor-pointer mt-0.5">
+                <option value="featured">Featured Curations</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="rating">Patron Acclaim</option>
+              </select>
+            </div>
+
+            <!-- Field 4: Primary Action Button -->
+            <div class="px-2">
+              <a href="#shop" id="heroSearchBtn"
+                class="w-full py-3 sm:py-3.5 px-6 rounded-xl sm:rounded-full bg-pine-900 hover:bg-pine-850 text-linen-50 font-semibold text-xs tracking-wider uppercase transition shadow-lg flex items-center justify-center gap-2 group">
+                <span>Explore Collection</span>
+                <svg class="w-4 h-4 text-amberAccent group-hover:translate-x-1 transition-transform" fill="none"
+                  stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TRUST & REPUTATION BAR -->
+    <section aria-label="Press accolades" class="max-w-7xl mx-auto px-4 sm:px-6 pb-16">
+      <div class="glass-pill rounded-2xl py-5 px-6 border border-linen-200 shadow-soft">
+        <div
+          class="flex flex-wrap items-center justify-center md:justify-between gap-6 text-center text-xs tracking-[0.2em] uppercase font-semibold text-pine-800">
+          <span class="hover:text-cedar transition">✦ Vogue Living: "The Majesty of Habesha Weaving"</span>
+          <span class="hidden sm:inline text-linen-300">•</span>
+          <span class="hover:text-cedar transition">✦ Monocle Cultural Awards 2025</span>
+          <span class="hidden sm:inline text-linen-300">•</span>
+          <span class="hover:text-cedar transition">✦ Architectural Digest: "The Purest Organic Spices &amp; Handloom"</span>
+          <span class="hidden md:inline text-linen-300">•</span>
+          <span class="hidden md:inline hover:text-cedar transition">✦ Ethiopian Diaspora Review: "Sacred Homegrown Splendor"</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHOPPING & CURATED COLLECTIONS ("THE NESTS & CREATIONS") -->
+    <section id="shop" class="max-w-7xl mx-auto px-4 sm:px-6 pb-24">
+
+      <!-- Section Title & Category Filter Pills -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-linen-200">
+        <div>
+          <span class="text-xs uppercase tracking-[0.25em] font-bold text-cedar block mb-1.5">Authentic Cultural Heritage</span>
+          <h2 class="font-serif text-4xl sm:text-5xl text-pine-950 font-normal">
+            Habesha Dresses &amp; Sacred Spices
+          </h2>
+        </div>
+
+        <!-- Filter Pills Bar -->
+        <div class="flex flex-wrap items-center gap-2" id="categoryPillBar">
+          <button
+            class="cat-pill px-4 py-2 rounded-full text-xs font-semibold tracking-wider transition bg-pine-900 text-amberAccent shadow-sm"
+            data-cat="all">
+            All Works <span class="text-[10px] opacity-75">(6)</span>
+          </button>
+          <button
+            class="cat-pill px-4 py-2 rounded-full text-xs font-semibold tracking-wider transition bg-linen-100 text-pine-900 hover:bg-linen-200"
+            data-cat="apparel">
+            Habesha Cultural Dresses <span class="text-[10px] opacity-75">(3)</span>
+          </button>
+          <button
+            class="cat-pill px-4 py-2 rounded-full text-xs font-semibold tracking-wider transition bg-linen-100 text-pine-900 hover:bg-linen-200"
+            data-cat="spices">
+            Sacred Ethiopian Spices <span class="text-[10px] opacity-75">(3)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Active Search Pill if applied -->
+      <div id="searchFilterBadge"
+        class="hidden mt-4 inline-flex items-center gap-2 bg-amberAccent/15 border border-amberAccent/30 text-pine-950 text-xs px-3.5 py-1 rounded-full">
+        <span>Filtering by: <strong id="activeSearchQuery"></strong></span>
+        <button id="clearSearchQueryBtn" class="font-bold hover:text-red-700">&times;</button>
+      </div>
+
+      <!-- PRODUCT CARDS GRID (HABESHA DRESSES & SPICES) -->
+      <div id="productGrid" class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <!-- Empty State -->
+      <div id="emptyCatalogMsg" class="hidden py-20 text-center">
+        <div class="w-16 h-16 mx-auto rounded-full bg-linen-100 grid place-items-center text-cedar mb-4">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
+        <h3 class="font-serif text-3xl font-medium text-pine-950">No Creations Match Your Search</h3>
+        <p class="text-xs text-zinc-500 mt-2">Try adjusting your filters or search terms to inspect the full archives.
+        </p>
+        <button onclick="resetAllFilters()"
+          class="mt-6 px-6 py-2.5 rounded-full bg-pine-900 text-linen-50 text-xs font-semibold uppercase tracking-wider">
+          Reset All Filters
+        </button>
+      </div>
+
+    </section>
+
+    <!-- THE SANCTUARY & ARTISAN GUILD HERITAGE (INTERACTIVE SLIDING CRAFT SHOWCASE) -->
+    <section id="sanctuary" class="max-w-7xl mx-auto px-4 sm:px-6 pb-24">
+      <div class="bg-pine-900 text-linen-50 rounded-3xl p-6 sm:p-10 lg:p-14 relative overflow-hidden shadow-2xl">
+
+        <!-- Ambient forest glow -->
+        <div class="absolute -right-20 -top-20 w-96 h-96 bg-pine-700/30 rounded-full blur-3xl pointer-events-none"></div>
+
+        <!-- Top Controls: Tab Pill Buttons & Slide Arrows -->
+        <div class="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 mb-8 border-b border-pine-800">
+          <div class="flex flex-wrap items-center gap-2.5">
+            <button id="sancTab0" onclick="switchSanctuarySlide(0)"
+              class="px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 bg-amberAccent text-pine-950 shadow-md flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-pine-950"></span>
+              <span>Habesha Cultural Dresses</span>
+            </button>
+            <button id="sancTab1" onclick="switchSanctuarySlide(1)"
+              class="px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 bg-pine-850 hover:bg-pine-800 text-linen-200 flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-amberAccent/40"></span>
+              <span>Sacred Ethiopian Spices</span>
+            </button>
+          </div>
+
+          <!-- Slide Controls -->
+          <div class="flex items-center gap-4">
+            <!-- Progress indicator -->
+            <div class="flex items-center gap-1.5" id="sancDotIndicators">
+              <button onclick="switchSanctuarySlide(0)" aria-label="Slide 1" class="w-8 h-1.5 rounded-full bg-amberAccent transition-all duration-300"></button>
+              <button onclick="switchSanctuarySlide(1)" aria-label="Slide 2" class="w-3 h-1.5 rounded-full bg-pine-700 hover:bg-pine-600 transition-all duration-300"></button>
+            </div>
+            
+            <div class="flex items-center gap-1.5">
+              <button onclick="prevSanctuarySlide()" aria-label="Previous Heritage Story"
+                class="w-8 h-8 rounded-full bg-pine-850 hover:bg-pine-800 text-linen-100 flex items-center justify-center transition border border-pine-700 text-xs">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+              </button>
+              <button onclick="nextSanctuarySlide()" aria-label="Next Heritage Story"
+                class="w-8 h-8 rounded-full bg-pine-850 hover:bg-pine-800 text-linen-100 flex items-center justify-center transition border border-pine-700 text-xs">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sliding Content Grid -->
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
+
+          <!-- Left: Narrative, Pillars & Product Review -->
+          <div class="lg:col-span-7 space-y-6 transition-all duration-500 ease-out" id="sancLeftContent">
+            
+            <!-- Category Badge -->
+            <div class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] font-bold text-amberAccent">
+              <span class="w-1.5 h-1.5 rounded-full bg-amberAccent animate-pulse"></span>
+              <span id="sancBadge">Dorze Highland Handloom · Living Heritage</span>
+            </div>
+
+            <!-- Title -->
+            <h2 id="sancTitle" class="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal leading-tight text-linen-50">
+              Highland Looms &amp; Ethereal Cotton. <br>
+              <span class="italic text-amberAccent">Woven by Dorze Masters.</span>
+            </h2>
+
+            <!-- Narrative Paragraph -->
+            <p id="sancDesc" class="text-linen-200/90 text-xs sm:text-sm md:text-base leading-relaxed font-light">
+              Every Habesha Kemis begins in the cloud forests of Chencha, where master artisans spin raw organic cotton on ancestral drop-spindles. Woven over weeks on vertical wooden looms with intricate gold and crimson tibeb borders, each gown embodies sacred celebration and living cultural dignity.
+            </p>
+
+            <!-- 3 Heritage Pillar Cards -->
+            <div class="grid sm:grid-cols-3 gap-3 pt-2" id="sancPillars">
+              <!-- Rendered dynamically -->
+            </div>
+
+            <!-- Dedicated Product Patron Review Card -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-pine-850/90 border border-pine-700/70 shadow-sm space-y-2" id="sancReviewCard">
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-amberAccent tracking-widest text-xs">★★★★★</span>
+                <span class="text-[10px] uppercase tracking-wider text-amberAccent font-bold" id="sancReviewTag">Verified Collector Review</span>
+              </div>
+              <p class="font-serif italic text-xs sm:text-sm text-linen-100 leading-relaxed" id="sancReviewQuote">
+                "The Handwoven Habesha Kemis was the centerpiece of our Melse wedding celebration. The cotton drape and gold tibeb borders took everyone's breath away."
+              </p>
+              <div class="flex items-center justify-between text-[11px] text-zinc-400 pt-1 border-t border-pine-700/50">
+                <span class="font-semibold text-linen-200" id="sancReviewAuthor">Elena Rostova</span>
+                <span class="text-[10px] uppercase text-zinc-400" id="sancReviewLocation">Geneva</span>
+              </div>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="pt-2">
+              <a href="#shop" id="sancCtaBtn" data-filter="apparel"
+                class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-amberAccent hover:bg-amberAccent-deep text-pine-950 font-bold text-xs uppercase tracking-wider transition shadow-lg">
+                <span id="sancCtaText">Acquire Habesha Dresses</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Right: Interactive Sliding Image Showcase with Gallery Thumbnails -->
+          <div class="lg:col-span-5 relative">
+            <div class="aspect-[4/5] rounded-2xl overflow-hidden border border-pine-700 shadow-2xl relative group bg-pine-950">
+              
+              <!-- Main Image with Slide Animation -->
+              <img id="sancMainImg" src="dress.png" alt="Handwoven Habesha Kemis"
+                class="w-full h-full object-cover transition-all duration-700 ease-out">
+              
+              <!-- Vignette Gradient -->
+              <div class="absolute inset-0 bg-gradient-to-t from-pine-950 via-pine-950/20 to-transparent"></div>
+
+              <!-- Top Left Image Counter Tag -->
+              <div class="absolute top-4 left-4 z-10 pointer-events-none">
+                <span id="sancImgCounter" class="text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-full bg-pine-950/80 backdrop-blur-md text-linen-100 border border-white/20">
+                  1 / 3 · Handwoven Habesha Kemis
+                </span>
+              </div>
+
+              <!-- Left/Right Image Micro-Arrows -->
+              <div class="absolute inset-x-2 top-1/2 -translate-y-1/2 flex items-center justify-between z-10 opacity-0 group-hover:opacity-100 transition-opacity">
+                <button onclick="prevSancSubImg(event)" aria-label="Previous Image" class="w-8 h-8 rounded-full bg-pine-950/70 hover:bg-amberAccent hover:text-pine-950 text-white flex items-center justify-center backdrop-blur-sm transition">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                </button>
+                <button onclick="nextSancSubImg(event)" aria-label="Next Image" class="w-8 h-8 rounded-full bg-pine-950/70 hover:bg-amberAccent hover:text-pine-950 text-white flex items-center justify-center backdrop-blur-sm transition">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </button>
+              </div>
+
+              <!-- Bottom Master Profile Quote -->
+              <div class="absolute bottom-5 left-5 right-5 z-10">
+                <span class="text-amberAccent text-[10px] tracking-widest uppercase font-bold block mb-1">Master Profile</span>
+                <p id="sancMasterQuote" class="font-serif text-lg sm:text-xl italic text-linen-50 leading-snug">
+                  "When the cotton breathes and the tibeb shines, our heritage lives forever."
+                </p>
+                <span id="sancMasterAuthor" class="text-[11px] text-zinc-400 block mt-1">
+                  — Master Weaver Tsegaye, Dorze Cloud Forest
+                </span>
+              </div>
+
+            </div>
+
+            <!-- Thumbnail Navigator Strip Below Image -->
+            <div id="sancThumbStrip" class="mt-3 flex items-center gap-2.5 overflow-x-auto pb-1">
+              <!-- Dynamically populated with dress or spice thumbnails -->
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS & GUEST PATRON REVIEWS -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 pb-24">
+      <div class="text-center max-w-xl mx-auto mb-12">
+        <span class="text-xs uppercase tracking-[0.25em] font-bold text-cedar block mb-1">Patron Notes</span>
+        <h2 class="font-serif text-4xl font-normal text-pine-950">Words From Our Collectors</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <div class="bg-white p-7 rounded-2xl border border-linen-200 shadow-soft">
+          <div class="text-amberAccent text-sm mb-3">★★★★★</div>
+          <p class="font-serif text-lg italic text-pine-900 leading-relaxed mb-4">
+            "The Handwoven Habesha Kemis was the center of attention at our Melse wedding celebration. The drape of the organic Dorze cotton and the intricate gold tibeb borders are breathtaking."
+          </p>
+          <div class="pt-3 border-t border-linen-100 flex items-center justify-between text-xs text-zinc-600">
+            <span class="font-semibold text-pine-950">Elena Rostova</span>
+            <span class="text-[10px] uppercase tracking-wider text-cedar">Geneva</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-7 rounded-2xl border border-linen-200 shadow-soft">
+          <div class="text-amberAccent text-sm mb-3">★★★★★</div>
+          <p class="font-serif text-lg italic text-pine-900 leading-relaxed mb-4">
+            "The Grand Reserve Berbere and Shiro took me straight back to Addis. You immediately detect the sun-cured chilies, garlic, and wild mountain korarima. Pure Ethiopian comfort."
+          </p>
+          <div class="pt-3 border-t border-linen-100 flex items-center justify-between text-xs text-zinc-600">
+            <span class="font-semibold text-pine-950">Chef Julian Vance</span>
+            <span class="text-[10px] uppercase tracking-wider text-cedar">New York</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-7 rounded-2xl border border-linen-200 shadow-soft">
+          <div class="text-amberAccent text-sm mb-3">★★★★★</div>
+          <p class="font-serif text-lg italic text-pine-900 leading-relaxed mb-4">
+            "The Tilfi embroidery on the Sovereign Kemis is extraordinary museum-grade art. It arrived in pristine condition with its matching Netela wrap. Absolutely proud of our authentic heritage."
+          </p>
+          <div class="pt-3 border-t border-linen-100 flex items-center justify-between text-xs text-zinc-600">
+            <span class="font-semibold text-pine-950">Sara Tesfaye</span>
+            <span class="text-[10px] uppercase tracking-wider text-cedar">Washington D.C.</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- LUXURY FOOTER & PRIVATE REGISTER -->
+  <footer class="bg-pine-950 text-linen-100 pt-16 pb-12 border-t border-pine-850">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+
+      <!-- Newsletter Card -->
+      <div class="bg-pine-900 border border-pine-800 rounded-3xl p-8 sm:p-12 mb-16 shadow-xl">
+        <div class="grid lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7">
+            <span class="text-[10px] tracking-[0.25em] uppercase font-bold text-amberAccent block mb-1">Highland
+              Dispatch</span>
+            <h3 class="font-serif text-3xl sm:text-4xl font-normal text-white">
+              Receive 10% courtesy on your premier acquisition.
+            </h3>
+            <p class="text-xs sm:text-sm text-linen-200/80 mt-2 max-w-md font-light leading-relaxed">
+              Join our private register for seasonal Dorze harvest dispatches and rare small-batch spice releases.
+            </p>
+          </div>
+          <div class="lg:col-span-5">
+            <form id="newsletterForm" class="flex flex-col sm:flex-row gap-2.5">
+              <input type="email" id="newsEmail" required placeholder="Enter your email"
+                class="flex-1 px-4 py-3 bg-pine-950 border border-pine-700 text-xs rounded-full text-white placeholder:text-zinc-500 focus:outline-none focus:border-amberAccent">
+              <button type="submit"
+                class="px-6 py-3 rounded-full bg-amberAccent hover:bg-amberAccent-deep text-pine-950 font-bold text-xs uppercase tracking-wider transition">
+                Subscribe
+              </button>
+            </form>
+            <p id="newsSuccess" class="hidden text-amberAccent text-xs mt-2.5">✦ Use privilege code
+              <strong>LUXURY10</strong> at checkout.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Links & Brand Coordinates -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 pb-12 border-b border-pine-850 text-xs text-zinc-400">
+        <div class="col-span-2 md:col-span-1 space-y-3">
+          <span class="font-serif text-2xl text-white font-bold block">GENX BUSINESS CENTER</span>
+          <p class="text-[11px] leading-relaxed text-zinc-400">
+            Authentic Habesha cultural dresses and sacred highland spices. Handcrafted in Ethiopia, cherished across continents.
+          </p>
+        </div>
+
+        <div class="space-y-2">
+          <h4 class="text-xs uppercase font-bold text-white tracking-wider">The Works</h4>
+          <ul class="space-y-1.5 text-[11px]">
+            <li><a href="#shop" data-filter="apparel" class="hover:text-amberAccent transition">Habesha Cultural Dresses</a></li>
+            <li><a href="#shop" data-filter="spices" class="hover:text-amberAccent transition">Sacred Ethiopian Spices</a></li>
+            <li><a href="#shop" data-filter="apparel" class="hover:text-amberAccent transition">Bespoke Made-to-Measure</a></li>
+            <li><a href="#shop" class="hover:text-amberAccent transition">Authentic Sizing Ritual</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-2">
+          <h4 class="text-xs uppercase font-bold text-white tracking-wider">The Guilds</h4>
+          <ul class="space-y-1.5 text-[11px]">
+            <li><a href="#sanctuary" class="hover:text-amberAccent transition">Chencha Dorze Weavers</a></li>
+            <li><a href="#sanctuary" class="hover:text-amberAccent transition">Wollo Province Spice Farmers</a></li>
+            <li><a href="#sanctuary" class="hover:text-amberAccent transition">Rift Valley Harvest Cooperatives</a></li>
+            <li><a href="#sanctuary" class="hover:text-amberAccent transition">Direct Fair Trade Report</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-2">
+          <h4 class="text-xs uppercase font-bold text-white tracking-wider">Cultural Centers</h4>
+          <p class="text-[11px] leading-relaxed">
+            Dorze Cloud Forest, Chencha<br>
+            Bole Showroom, Addis Ababa<br>
+            Washington D.C. Concierge
+          </p>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-zinc-500 gap-4">
+        <p>&copy; 2026 GenX Business Center. Handcrafted in Ethiopia. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-zinc-300">Privacy Policy</a>
+          <a href="#" class="hover:text-zinc-300">Patron Terms</a>
+          <a href="#" class="hover:text-zinc-300">Authenticity Guarantee</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================= -->
+  <!-- MODALS & DRAWERS                                          -->
+  <!-- ========================================================= -->
+
+  <!-- SCRIM BACKDROP -->
+  <div id="scrim" class="scrim fixed inset-0 z-50 bg-pine-950/70 backdrop-blur-sm"></div>
+
+  <!-- SEARCH MODAL POPUP -->
+  <div id="searchModal" class="hidden fixed inset-0 z-50 p-4 flex items-start justify-center pt-24">
+    <div class="relative w-full max-w-lg bg-white rounded-3xl p-6 shadow-2xl border border-linen-200">
+      <div class="flex items-center justify-between pb-3 border-b border-linen-200">
+        <span class="text-xs font-bold uppercase tracking-wider text-cedar">Search The Vault</span>
+        <button id="closeSearchModalBtn" class="text-xl text-zinc-500 hover:text-pine-950">&times;</button>
+      </div>
+      <div class="mt-4 flex items-center gap-3 bg-linen-50 border border-linen-200 rounded-full px-4 py-2">
+        <svg class="w-4 h-4 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="7" />
+          <path d="M16.5 16.5l4.5 4.5" />
+        </svg>
+        <input type="search" id="modalSearchInput" placeholder="Try 'kemis', 'berbere', 'shiro', 'tilfi', 'mitmita', 'dorze'..."
+          class="flex-1 bg-transparent text-xs outline-none">
+      </div>
+      <div class="mt-4 text-[11px] text-zinc-500">
+        Quick tags:
+        <button class="text-cedar font-semibold underline ml-1" onclick="quickFilterSearch('kemis')">Habesha Kemis</button>,
+        <button class="text-cedar font-semibold underline ml-1" onclick="quickFilterSearch('berbere')">Berbere</button>,
+        <button class="text-cedar font-semibold underline ml-1" onclick="quickFilterSearch('shiro')">Shiro</button>,
+        <button class="text-cedar font-semibold underline ml-1" onclick="quickFilterSearch('mitmita')">Mitmita</button>,
+        <button class="text-cedar font-semibold underline ml-1" onclick="quickFilterSearch('tilfi')">Tilfi</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRIVATE INSPECTION / PRODUCT DETAIL MODAL -->
+  <div id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"
+    class="hidden fixed inset-0 z-50 overflow-y-auto p-4 sm:p-6 md:p-10 flex items-center justify-center">
+
+    <div
+      class="relative w-full max-w-4xl bg-linen-50 border border-linen-200 shadow-2xl rounded-3xl overflow-hidden my-auto">
+
+      <!-- Close Button -->
+      <button id="modalCloseBtn" aria-label="Close"
+        class="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-white hover:bg-pine-900 text-pine-950 hover:text-white transition flex items-center justify-center text-xl shadow">
+        &times;
+      </button>
+
+      <div class="grid md:grid-cols-12 max-h-[85vh] overflow-y-auto">
+
+        <!-- Left Column: Gallery -->
+        <div
+          class="md:col-span-6 bg-linen-100 p-6 flex flex-col justify-between border-b md:border-b-0 md:border-r border-linen-200">
+          <div class="relative aspect-square w-full rounded-2xl overflow-hidden shadow-sm bg-white">
+            <img id="modalMainImg" src="" alt="" class="w-full h-full object-cover transition-all duration-500">
+          </div>
+
+          <!-- Thumbnails -->
+          <div id="modalThumbs" class="mt-4 flex gap-3 overflow-x-auto pb-1"></div>
+
+          <!-- Origin Bar -->
+          <div class="mt-4 pt-3 border-t border-linen-200 flex items-center justify-between text-[11px] text-zinc-600">
+            <span class="flex items-center gap-1.5 font-medium">
+              <span class="w-2 h-2 rounded-full bg-pine-600"></span>
+              Authentic Ethiopian Provenance
+            </span>
+            <span class="text-cedar font-semibold" id="modalOriginTag">Chencha Highlands</span>
+          </div>
+        </div>
+
+        <!-- Right Column: Customization & Actions -->
+        <div class="md:col-span-6 p-6 sm:p-8 flex flex-col justify-between space-y-6">
+          <div>
+            <div class="flex items-center justify-between gap-4">
+              <span id="modalBadge"
+                class="text-[10px] tracking-wider uppercase font-bold text-cedar bg-amberAccent/15 px-2.5 py-1 rounded-full"></span>
+              <div id="modalStars" class="text-amberAccent text-xs"></div>
+            </div>
+
+            <h2 id="modalTitle" class="font-serif text-3xl sm:text-4xl text-pine-950 font-medium mt-3 leading-tight">
+            </h2>
+
+            <div class="flex items-baseline gap-3 mt-2">
+              <span id="modalPrice" class="font-serif text-3xl font-semibold text-cedar"></span>
+              <span class="text-xs text-zinc-500 uppercase tracking-widest">Taxes Included</span>
+            </div>
+
+            <p id="modalDesc" class="mt-4 text-xs sm:text-sm text-zinc-700 leading-relaxed font-light"></p>
+
+            <!-- Dynamic Options (Weight / Size / Color) -->
+            <div id="modalOptionsContainer" class="mt-6 space-y-4 border-t border-linen-200 pt-5"></div>
+          </div>
+
+          <!-- Stepper & Bag Button -->
+          <div class="pt-4 border-t border-linen-200">
+            <div class="flex items-center gap-4">
+              <div class="flex items-center border border-linen-300 rounded-full bg-white px-2">
+                <button id="modalQtyMinus" class="w-8 h-9 text-pine-900 text-lg font-bold">&minus;</button>
+                <span id="modalQtyVal" class="w-8 text-center font-bold text-xs">1</span>
+                <button id="modalQtyPlus" class="w-8 h-9 text-pine-900 text-lg font-bold">+</button>
+              </div>
+
+              <button id="modalAddToCartBtn"
+                class="flex-1 py-3.5 px-6 rounded-full bg-pine-900 hover:bg-pine-850 text-linen-50 font-bold text-xs uppercase tracking-wider transition shadow-lg">
+                <span id="modalAddBtnText">Acquire To Private Bag</span>
+              </button>
+            </div>
+
+            <!-- Accordion Details -->
+            <div id="modalAccordions" class="mt-6 space-y-2 border-t border-linen-200 pt-4"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SHOPPING BAG DRAWER (NIXTIO STYLE) -->
+  <aside id="cartDrawer"
+    class="drawer fixed top-0 right-0 bottom-0 w-full max-w-md bg-linen-50 border-l border-linen-200 z-[60] flex flex-col shadow-2xl"
+    aria-label="Shopping bag">
+
+    <!-- Drawer Header -->
+    <div class="p-6 border-b border-linen-200 flex items-center justify-between bg-linen-100">
+      <div>
+        <span class="text-[10px] tracking-widest uppercase font-bold text-cedar">Patron Bag</span>
+        <h2 class="font-serif text-2xl font-semibold text-pine-950">Your Curations</h2>
+      </div>
+      <button id="cartDrawerCloseBtn" aria-label="Close bag"
+        class="w-9 h-9 rounded-full bg-white hover:bg-linen-200 text-pine-900 flex items-center justify-center text-xl transition">
+        &times;
+      </button>
+    </div>
+
+    <!-- Free Shipping Progress -->
+    <div class="px-6 py-4 bg-white border-b border-linen-200">
+      <div class="flex justify-between items-center text-xs mb-2">
+        <span class="font-medium text-pine-950">Complimentary Courier Delivery</span>
+        <span id="shippingRemainingText" class="text-amberAccent font-bold">$100 away</span>
+      </div>
+      <div class="w-full h-2 bg-linen-200 rounded-full overflow-hidden">
+        <div id="shippingProgressBar" class="h-full bg-amberAccent transition-all duration-500" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <!-- Items Scroll Area -->
+    <div id="cartItemsList" class="flex-1 overflow-y-auto p-6 space-y-4 divide-y divide-linen-200">
+      <!-- Injected via JavaScript -->
+    </div>
+
+    <!-- Drawer Footer -->
+    <div class="p-6 border-t border-linen-200 bg-linen-100 space-y-4">
+
+      <!-- Promo code -->
+      <div class="flex gap-2">
+        <input type="text" id="promoInput" placeholder="Privilege Code (e.g. LUXURY10)"
+          class="flex-1 px-3.5 py-2 text-xs uppercase tracking-wider bg-white border border-linen-300 rounded-full focus:outline-none focus:border-amberAccent">
+        <button id="applyPromoBtn"
+          class="px-5 py-2 bg-pine-900 hover:bg-pine-850 text-linen-50 text-xs font-bold uppercase rounded-full transition">
+          Apply
+        </button>
+      </div>
+      <p id="promoMessage" class="hidden text-xs text-pine-800 font-semibold"></p>
+
+      <!-- Totals -->
+      <div class="space-y-1.5 text-xs text-zinc-600 pt-2">
+        <div class="flex justify-between">
+          <span>Subtotal</span>
+          <span id="cartDrawerSubtotal" class="font-bold text-pine-950">$0.00</span>
+        </div>
+        <div id="discountRow" class="hidden flex justify-between text-pine-800 font-bold">
+          <span>Patron Privilege (10%)</span>
+          <span id="cartDiscountVal">-$0.00</span>
+        </div>
+        <div class="flex justify-between">
+          <span>Global Delivery</span>
+          <span class="text-pine-800 font-bold">Complimentary</span>
+        </div>
+        <div class="flex justify-between text-base font-bold text-pine-950 pt-2 border-t border-linen-200 font-serif">
+          <span>Total</span>
+          <span id="cartFinalTotal" class="text-xl text-cedar">$0.00</span>
+        </div>
+      </div>
+
+      <!-- Checkout Button -->
+      <button id="checkoutBtn"
+        class="w-full py-4 rounded-full bg-pine-900 hover:bg-pine-850 text-linen-50 font-bold text-xs uppercase tracking-wider transition shadow-xl">
+        Proceed To Secure Checkout
+      </button>
+
+      <p class="text-center text-[10px] text-zinc-500 uppercase tracking-widest">
+        🔒 256-Bit SSL Encrypted · Direct-To-Artisan Guarantee
+      </p>
+
+    </div>
+
+  </aside>
+
+  <!-- ========================================================= -->
+  <!-- JAVASCRIPT STATE & INTERACTIONS ENGINE                    -->
+  <!-- ========================================================= -->
+  <script>
+    /* ===== DATA ARCHIVE ===== */
+    const PRODUCTS = [
+      {
+        id: 1,
+        cat: 'spices',
+        name: 'Authentic Grand Reserve Berbere',
+        price: 14,
+        rating: 5,
+        heat: 4,
+        region: 'Wollo',
+        pairing: 'Best for Doro Wat & Slow Braised Meats',
+        desc: 'Hand-harvested sun-dried red chilies, mountain korarima (Ethiopian cardamom), and wild highland botanicals stone-ground in micro batches.',
+        opts: {
+          type: 'weight',
+          label: 'Weight Specification',
+          values: [['250g Ceramic Jar', 0], ['500g Reserve Pouch', 11], ['1kg Master Tin', 22]]
+        },
+        imgs: [
+          'ber.png',
+          'berbere.png'
+        ],
+        story: [
+          'Chilies grown organically on highland terraces in Wollo Province, cured on woven reed screens.',
+          'Hermetically sealed in UV-protective tins. Store away from heat and sunlight. Best within 18 months.',
+          'Blended by a renowned women-led artisan spice cooperative in Addis Ababa.'
+        ],
+        hallmark: 'Wollo Terroir Harvest'
+      },
+      {
+        id: 2,
+        cat: 'spices',
+        name: 'Pure Highland Reserve Shiro',
+        price: 16,
+        rating: 5,
+        heat: 2,
+        region: 'Wollo',
+        pairing: 'Essential for Classic Tegabino & Clay-Pot Shiro',
+        desc: 'Slow-roasted sun-cured chickpeas and split peas milled with sun-dried garlic, fenugreek, korarima, and ginger for an authentic velvet stew.',
+        opts: {
+          type: 'weight',
+          label: 'Weight Specification',
+          values: [['250g Ceramic Jar', 0], ['500g Reserve Pouch', 10], ['1kg Master Tin', 20]]
+        },
+        imgs: [
+          'shiro.png'
+        ],
+        story: [
+          'Milled from slow-roasted sun-dried organic chickpeas and highland legumes grown on fertile volcanic plateaus.',
+          'Hermetically sealed to safeguard the toasted garlic and herb aromatics. Store in cool, dark pantry conditions.',
+          'Stone-ground by a women-led grain and legume guild using ancestral stone mill techniques.'
+        ],
+        hallmark: 'Highland Mill Harvest'
+      },
+      {
+        id: 3,
+        cat: 'spices',
+        name: 'Mitmita Fire Blend',
+        price: 12,
+        rating: 5,
+        heat: 5,
+        region: 'Wollo',
+        pairing: 'Ideal for Beef Kitfo, Tartares & Grill Rubs',
+        desc: 'Bird’s-eye chili toasted over hardwood embers with korarima and cloves. A micro-pinch delivers an exhilarating rush of fiery aroma.',
+        opts: {
+          type: 'weight',
+          label: 'Weight Specification',
+          values: [['250g Ceramic Jar', 0], ['500g Reserve Pouch', 9], ['1kg Master Tin', 19]]
+        },
+        imgs: [
+          'mit.png'
+        ],
+        story: [
+          'Grown in rich volcanic soils of the Rift Valley and toasted gently with fragrant cloves.',
+          'Keep sealed in cool dark pantry storage. Maintains peak vibrancy for over a year.',
+          'Crafted by the same historic spice guild that prepares ceremonial blends.'
+        ],
+        hallmark: 'Rift Valley Volcanic'
+      },
+      {
+        id: 4,
+        cat: 'apparel',
+        name: 'Handwoven Habesha Kemis',
+        price: 185,
+        rating: 5,
+        badge: '100% Organic Highland Cotton',
+        region: 'Dorze',
+        origin: 'Chencha Cloud Forest, Dorze Highlands',
+        desc: 'A magnificent ceremonial gown crafted from ethereal hand-spun organic cotton, framed by intricate gold and crimson hand-loomed tibeb borders.',
+        opts: {
+          type: 'size',
+          label: 'Atelier Sizing',
+          values: [['S (EU 36)', 0], ['M (EU 38)', 0], ['L (EU 40)', 0], ['XL (EU 42)', 0]],
+          custom: true
+        },
+        imgs: [
+          'dress.png'
+        ],
+        story: [
+          'Woven by Dorze master weavers in traditional beehive bamboo homes high in Chencha.',
+          'Gentle hand-wash in chilled spring water; hang flat in shade. Custom tailoring ships in 14 days.',
+          'Each dress takes 2 to 3 weeks of painstaking hand-loom work.'
+        ],
+        hallmark: 'Dorze Highland Loom'
+      },
+      {
+        id: 5,
+        cat: 'apparel',
+        name: 'Sovereign Highland Kemis',
+        price: 195,
+        rating: 5,
+        badge: 'Hand-Loomed Tilfi Embroidery',
+        region: 'Dorze',
+        origin: 'Chencha Cloud Forest, Dorze Highlands',
+        desc: 'An exquisite hand-spun cotton dress adorned with intricate geometric tilfi needlework, woven over weeks on traditional wooden drop-spindles.',
+        opts: {
+          type: 'size',
+          label: 'Atelier Sizing',
+          values: [['S (EU 36)', 0], ['M (EU 38)', 0], ['L (EU 40)', 0], ['XL (EU 42)', 0]],
+          custom: true
+        },
+        imgs: [
+          'dre.png'
+        ],
+        story: [
+          'Woven by Dorze master weavers in traditional beehive bamboo homes high in Chencha.',
+          'Gentle hand-wash in chilled spring water; hang flat in shade. Custom tailoring ships in 14 days.',
+          'Features gold-threaded tibeb and intricate highland diamond motifs signifying protection and honor.'
+        ],
+        hallmark: 'Dorze Highland Loom'
+      },
+      {
+        id: 6,
+        cat: 'apparel',
+        name: 'Royal Ceremonial Dorze Dress',
+        price: 220,
+        rating: 5,
+        badge: 'Heirloom Gold-Threaded Tibeb',
+        region: 'Dorze',
+        origin: 'Chencha Cloud Forest, Dorze Highlands',
+        desc: 'A regal full-length ceremonial attire handwoven with ultra-fine gossamer cotton and radiant highland embroidery, fit for celebrations and sacred rites.',
+        opts: {
+          type: 'size',
+          label: 'Atelier Sizing',
+          values: [['S (EU 36)', 0], ['M (EU 38)', 0], ['L (EU 40)', 0], ['XL (EU 42)', 0]],
+          custom: true
+        },
+        imgs: [
+          'dr3.png'
+        ],
+        story: [
+          'Spun on drop spindles using pure highland cotton. Features heirloom gold and crimson cross-stitch borders.',
+          'Hand-wash cold. Delivered in an embroidered organic linen dust bag.',
+          'Woven by senior master artisans whose craft has been passed down for over four generations.'
+        ],
+        hallmark: 'Ancestral Drop-Spindle'
+      }
+    ];
+
+    /* ===== STATE & CURRENCY CONVERSION ===== */
+    const RATES = {
+      USD: { symbol: '$', rate: 1.0 },
+      EUR: { symbol: '€', rate: 0.92 },
+      GBP: { symbol: '£', rate: 0.79 }
+    };
+
+    const state = {
+      cart: JSON.parse(localStorage.getItem('genx_cart') || localStorage.getItem('amen_cart') || '[]'),
+      wishlist: new Set(JSON.parse(localStorage.getItem('genx_wish') || localStorage.getItem('amen_wish') || '[]')),
+      cat: 'all',
+      region: 'all',
+      search: '',
+      sort: 'featured',
+      currency: 'USD',
+      discount: 0,
+      activeProduct: null,
+      activeQty: 1,
+      selectedOptions: {
+        opt: '',
+        custom: false,
+        measurements: '',
+        mono: ''
+      }
+    };
+
+    /* ===== UTILITIES ===== */
+    const $ = s => document.querySelector(s);
+    const $$ = s => document.querySelectorAll(s);
+
+    function formatMoney(amountInUSD) {
+      const { symbol, rate } = RATES[state.currency];
+      return `${symbol}${(amountInUSD * rate).toFixed(2)}`;
+    }
+
+    function renderStarRating(stars) {
+      return '★'.repeat(stars) + '☆'.repeat(5 - stars);
+    }
+
+    function saveState() {
+      localStorage.setItem('genx_cart', JSON.stringify(state.cart));
+      localStorage.setItem('genx_wish', JSON.stringify([...state.wishlist]));
+    }
+
+    /* ===== TOAST NOTIFICATIONS ===== */
+    function showToast(title, message, isSuccess = true) {
+      const container = $('#toastContainer');
+      const toast = document.createElement('div');
+      toast.className = 'pointer-events-auto bg-pine-950 border border-amberAccent/40 text-linen-50 p-4 rounded-2xl shadow-float flex items-start gap-3 w-80 transform transition-all duration-300 translate-y-4 opacity-0';
+      toast.innerHTML = `
+        <div class="w-6 h-6 rounded-full ${isSuccess ? 'bg-amberAccent/20 text-amberAccent' : 'bg-red-900/30 text-red-400'} border border-amberAccent/40 grid place-items-center text-xs flex-shrink-0 mt-0.5">
+          ${isSuccess ? '✦' : '✕'}
+        </div>
+        <div class="flex-1 text-xs">
+          <strong class="font-bold text-amberAccent block text-xs uppercase tracking-wider">${title}</strong>
+          <p class="text-linen-200 mt-0.5 leading-snug">${message}</p>
+        </div>
+      `;
+      container.appendChild(toast);
+
+      requestAnimationFrame(() => toast.classList.remove('translate-y-4', 'opacity-0'));
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-2');
+        setTimeout(() => toast.remove(), 350);
+      }, 3800);
+    }
+
+    /* ===== ROTATING ANNOUNCEMENT ===== */
+    const tickerNotes = [
+      '✦ Handwoven Habesha Cultural Dresses & Sun-Cured Ethiopian Spices ✦',
+      '✦ 100% Organic Highland Cotton Handspun on Dorze Drop-Spindles ✦',
+      '✦ Stone-Ground Grand Reserve Berbere, Shiro & Mitmita from Wollo ✦',
+      '✦ Direct Fair-Trade Patronage to Weaving Guilds & Spice Farmers ✦'
+    ];
+    let tickerIdx = 0;
+    setInterval(() => {
+      tickerIdx = (tickerIdx + 1) % tickerNotes.length;
+      const el = $('#announcementTicker');
+      if (el) {
+        el.style.opacity = '0';
+        setTimeout(() => {
+          el.textContent = tickerNotes[tickerIdx];
+          el.style.opacity = '1';
+        }, 300);
+      }
+    }, 4500);
+
+    /* ===== PRODUCT GRID RENDERING (HABESHA DRESSES & SPICES) ===== */
+    function renderGrid() {
+      const grid = $('#productGrid');
+      const emptyMsg = $('#emptyCatalogMsg');
+
+      let list = PRODUCTS.filter(p => {
+        const matchesCategory = state.cat === 'all' || p.cat === state.cat;
+        const matchesRegion = state.region === 'all' || p.region === state.region;
+        const matchesSearch = p.name.toLowerCase().includes(state.search) ||
+          p.desc.toLowerCase().includes(state.search) ||
+          p.cat.toLowerCase().includes(state.search);
+        return matchesCategory && matchesRegion && matchesSearch;
+      });
+
+      // Sort
+      if (state.sort === 'price-asc') list.sort((a, b) => a.price - b.price);
+      else if (state.sort === 'price-desc') list.sort((a, b) => b.price - a.price);
+      else if (state.sort === 'rating') list.sort((a, b) => b.rating - a.rating);
+
+      if (list.length === 0) {
+        grid.innerHTML = '';
+        emptyMsg.classList.remove('hidden');
+        return;
+      }
+      emptyMsg.classList.add('hidden');
+
+      grid.innerHTML = list.map(product => {
+        const isWish = state.wishlist.has(product.id);
+        const attributeTag = product.cat === 'spices'
+          ? (product.heat <= 2
+              ? `<span class="text-[10px] font-bold text-cedar bg-amberAccent/15 px-2.5 py-0.5 rounded-full">Aromatic Mild · Heat ${product.heat}/5</span>`
+              : `<span class="text-[10px] font-bold text-amberAccent bg-amberAccent/15 px-2.5 py-0.5 rounded-full">Intense Fire · Heat ${product.heat}/5</span>`)
+          : `<span class="text-[10px] font-bold text-pine-700 bg-pine-100 px-2.5 py-0.5 rounded-full">${product.badge}</span>`;
+
+        return `
+          <article class="woodnest-card bg-white rounded-2xl overflow-hidden flex flex-col group relative shadow-soft">
+            
+            <!-- Image Frame -->
+            <div class="relative aspect-[4/5] overflow-hidden bg-linen-100 cursor-pointer" onclick="openProductModal(${product.id})">
+              <img src="${product.imgs[0]}" alt="${product.name}" loading="lazy" 
+                   class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-108">
+              
+              <!-- Subtle Dark Gradient -->
+              <div class="absolute inset-0 bg-gradient-to-t from-pine-950/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+
+              <!-- Top Left Hallmark Pill -->
+              <div class="absolute top-3 left-3 pointer-events-none">
+                <span class="text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-pine-950 shadow-sm border border-white/60">
+                  ${product.hallmark}
+                </span>
+              </div>
+
+              <!-- Top Right Wishlist Button -->
+              <button aria-label="Save to Wishlist" 
+                      class="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/90 backdrop-blur-md text-pine-900 hover:text-red-600 flex items-center justify-center transition shadow-sm hover:scale-110 active:scale-95"
+                      onclick="event.stopPropagation(); toggleWishlist(${product.id})">
+                <svg class="w-4 h-4 ${isWish ? 'fill-red-600 text-red-600' : 'fill-none'}" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/>
+                </svg>
+              </button>
+
+              <!-- Floating Quick Inspect Pill Button -->
+              <div class="absolute inset-x-4 bottom-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none">
+                <button class="pointer-events-auto w-full py-2.5 rounded-full bg-pine-900/95 text-linen-50 hover:bg-pine-900 text-xs font-bold tracking-wider uppercase backdrop-blur-md shadow-xl flex items-center justify-center gap-2">
+                  <span>Inspect Piece</span>
+                  <svg class="w-3.5 h-3.5 text-amberAccent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </button>
+              </div>
+
+            </div>
+
+            <!-- Content Area -->
+            <div class="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between text-xs text-amberAccent mb-1">
+                  <span class="tracking-widest">${renderStarRating(product.rating)}</span>
+                  <span class="text-[10px] text-zinc-400 uppercase tracking-widest font-semibold">Reserve</span>
+                </div>
+
+                <h3 class="font-serif text-2xl font-medium text-pine-950 cursor-pointer group-hover:text-cedar transition-colors leading-snug" onclick="openProductModal(${product.id})">
+                  ${product.name}
+                </h3>
+
+                <p class="mt-2 text-xs text-zinc-600 line-clamp-2 leading-relaxed font-light">
+                  ${product.desc}
+                </p>
+              </div>
+
+              <div class="mt-5 pt-4 border-t border-linen-200">
+                <div class="mb-3">
+                  ${attributeTag}
+                </div>
+
+                <div class="flex items-center justify-between gap-3">
+                  <div class="font-serif text-2xl font-bold text-cedar">
+                    ${formatMoney(product.price)}
+                  </div>
+
+                  <button class="px-4 py-2 rounded-full bg-pine-900 hover:bg-pine-850 text-linen-50 text-xs font-bold uppercase tracking-wider transition shadow-sm" onclick="quickAdd(${product.id})">
+                    <span>Quick Bag</span>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+          </article>
+        `;
+      }).join('');
+    }
+
+    /* ===== FILTER CONTROLS ===== */
+    function setCategory(cat) {
+      state.cat = cat;
+      const select = $('#filterCategory');
+      if (select) select.value = cat;
+
+      $$('#categoryPillBar button').forEach(btn => {
+        const active = btn.dataset.cat === cat;
+        if (active) {
+          btn.className = 'cat-pill px-4 py-2 rounded-full text-xs font-semibold tracking-wider transition bg-pine-900 text-amberAccent shadow-sm';
+        } else {
+          btn.className = 'cat-pill px-4 py-2 rounded-full text-xs font-semibold tracking-wider transition bg-linen-100 text-pine-900 hover:bg-linen-200';
+        }
+      });
+      renderGrid();
+    }
+
+    $$('#categoryPillBar button').forEach(btn => {
+      btn.addEventListener('click', () => setCategory(btn.dataset.cat));
+    });
+
+    $$('.nav-pill').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const cat = btn.dataset.filter;
+        if (cat) setCategory(cat);
+      });
+    });
+
+    // Hero Widget Selectors
+    $('#filterCategory').addEventListener('change', e => setCategory(e.target.value));
+    $('#filterRegion').addEventListener('change', e => {
+      state.region = e.target.value;
+      renderGrid();
+    });
+    $('#filterSort').addEventListener('change', e => {
+      state.sort = e.target.value;
+      renderGrid();
+    });
+
+    /* ===== SEARCH CONTROLS ===== */
+    const searchModal = $('#searchModal');
+    const modalSearchInput = $('#modalSearchInput');
+
+    $('#searchTriggerBtn').addEventListener('click', () => {
+      searchModal.classList.remove('hidden');
+      $('#scrim').classList.add('open');
+      modalSearchInput.focus();
+    });
+
+    $('#closeSearchModalBtn').addEventListener('click', () => {
+      searchModal.classList.add('hidden');
+      if ($('#productModal').classList.contains('hidden') && !$('#cartDrawer').classList.contains('open')) {
+        $('#scrim').classList.remove('open');
+      }
+    });
+
+    modalSearchInput.addEventListener('input', (e) => {
+      applySearch(e.target.value);
+    });
+
+    function applySearch(query) {
+      state.search = query.trim().toLowerCase();
+      const badge = $('#searchFilterBadge');
+      if (state.search) {
+        badge.classList.remove('hidden');
+        $('#activeSearchQuery').textContent = state.search;
+      } else {
+        badge.classList.add('hidden');
+      }
+      renderGrid();
+    }
+
+    function quickFilterSearch(tag) {
+      modalSearchInput.value = tag;
+      applySearch(tag);
+      searchModal.classList.add('hidden');
+      $('#scrim').classList.remove('open');
+      window.location.hash = '#shop';
+    }
+
+    $('#clearSearchQueryBtn').addEventListener('click', () => {
+      modalSearchInput.value = '';
+      applySearch('');
+    });
+
+    function resetAllFilters() {
+      state.cat = 'all';
+      state.region = 'all';
+      state.search = '';
+      state.sort = 'featured';
+      $('#filterCategory').value = 'all';
+      $('#filterRegion').value = 'all';
+      $('#filterSort').value = 'featured';
+      modalSearchInput.value = '';
+      $('#searchFilterBadge').classList.add('hidden');
+      setCategory('all');
+    }
+
+    /* ===== CURRENCY SWITCHER ===== */
+    $('#currencySelect').addEventListener('change', (e) => {
+      state.currency = e.target.value;
+      renderGrid();
+      renderCart();
+      if (state.activeProduct) renderModalPrice();
+      showToast('Currency Converted', `Pricing updated to ${state.currency} (${RATES[state.currency].symbol})`);
+    });
+
+    /* ===== WISHLIST ===== */
+    function toggleWishlist(productId) {
+      const p = PRODUCTS.find(x => x.id === productId);
+      if (!p) return;
+
+      if (state.wishlist.has(productId)) {
+        state.wishlist.delete(productId);
+        showToast('Vault Updated', `"${p.name}" removed from wish vault.`);
+      } else {
+        state.wishlist.add(productId);
+        showToast('Work Preserved', `"${p.name}" added to your private wish collection.`);
+      }
+      $('#wishCount').textContent = state.wishlist.size;
+      saveState();
+      renderGrid();
+    }
+
+    $('#wishlistTriggerBtn').addEventListener('click', () => {
+      if (state.wishlist.size === 0) {
+        showToast('Vault Empty', 'You have not marked any works yet. Explore the collection.', false);
+      } else {
+        showToast('Vault Contents', `You have ${state.wishlist.size} preserved works.`);
+      }
+    });
+
+    /* ===== PRODUCT MODAL (PRIVATE INSPECTION) ===== */
+    function getDefaultOption(p) {
+      return p.opts.values[0][0];
+    }
+
+    function calculateUnitPrice(p, selOpt) {
+      const pair = p.opts.values.find(v => v[0] === selOpt);
+      const addOn = (pair && pair[1]) ? pair[1] : 0;
+      return p.price + addOn;
+    }
+
+    function openProductModal(id) {
+      const p = PRODUCTS.find(x => x.id === id);
+      if (!p) return;
+
+      state.activeProduct = p;
+      state.activeQty = 1;
+      state.selectedOptions = {
+        opt: getDefaultOption(p),
+        custom: false,
+        measurements: '',
+        mono: ''
+      };
+
+      $('#modalTitle').textContent = p.name;
+      $('#modalDesc').textContent = p.desc;
+      $('#modalBadge').textContent = p.cat === 'spices' ? p.pairing : (p.badge || 'Artisanal Creation');
+      $('#modalOriginTag').textContent = p.origin || p.hallmark || 'Ethiopia';
+      $('#modalStars').innerHTML = `${renderStarRating(p.rating)} <span class="text-zinc-500 ml-1 text-[11px]">(5.0 Score)</span>`;
+
+      $('#modalMainImg').src = p.imgs[0];
+      $('#modalMainImg').alt = p.name;
+
+      $('#modalThumbs').innerHTML = p.imgs.map((src, idx) => `
+        <button class="w-14 h-14 rounded-xl overflow-hidden border-2 transition flex-shrink-0 ${idx === 0 ? 'border-amberAccent scale-95' : 'border-linen-300 opacity-70'}"
+                onclick="switchModalImg(this, '${src}')">
+          <img src="${src}" alt="" class="w-full h-full object-cover">
+        </button>
+      `).join('');
+
+      renderModalOptions();
+      renderModalPrice();
+      renderModalAccordions(p);
+
+      $('#scrim').classList.add('open');
+      $('#productModal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function switchModalImg(btn, src) {
+      $('#modalMainImg').src = src;
+      $$('#modalThumbs button').forEach(b => {
+        b.className = 'w-14 h-14 rounded-xl overflow-hidden border-2 transition flex-shrink-0 border-linen-300 opacity-70';
+      });
+      btn.className = 'w-14 h-14 rounded-xl overflow-hidden border-2 transition flex-shrink-0 border-amberAccent scale-95';
+    }
+
+    function renderModalOptions() {
+      const p = state.activeProduct;
+      const opts = p.opts;
+      const container = $('#modalOptionsContainer');
+
+      let html = `<div>
+        <label class="block text-xs uppercase tracking-wider font-bold text-pine-950 mb-2">
+          ${opts.label}: <span class="text-cedar font-semibold ml-1">${state.selectedOptions.opt}</span>
+        </label>
+        <div class="flex flex-wrap gap-2 items-center">`;
+
+      html += opts.values.map(val => `
+        <button type="button" 
+                class="px-3.5 py-1.5 text-xs font-semibold rounded-full border transition ${state.selectedOptions.opt === val[0] ? 'border-pine-900 bg-pine-900 text-amberAccent shadow' : 'border-linen-300 bg-white text-pine-950'}"
+                onclick="selectModalOpt('${val[0]}')">
+          ${val[0]} ${val[1] > 0 ? `(+${formatMoney(val[1])})` : ''}
+        </button>
+      `).join('');
+
+      html += `</div></div>`;
+
+      // Tailoring for Habesha Cultural Dresses
+      if (opts.custom) {
+        html += `
+          <div class="pt-3 border-t border-linen-200 space-y-2">
+            <label class="flex items-center gap-2 text-xs font-bold text-pine-950 cursor-pointer">
+              <input type="checkbox" ${state.selectedOptions.custom ? 'checked' : ''} 
+                     onchange="toggleCustomTailor(this.checked)"
+                     class="w-4 h-4 rounded text-amberAccent">
+              <span>Bespoke Made-to-Measure Tailoring (Complimentary)</span>
+            </label>
+            ${state.selectedOptions.custom ? `
+              <input type="text" placeholder="Bust / Waist / Hips / Desired Length (cm)" 
+                     value="${state.selectedOptions.measurements}"
+                     oninput="state.selectedOptions.measurements = this.value"
+                     class="w-full px-4 py-2 text-xs bg-white border border-linen-300 rounded-full focus:outline-none focus:border-amberAccent">
+              <p class="text-[10px] text-zinc-500 mt-1">Our Dorze master tailors will craft the kemis to your exact proportions.</p>
+            ` : ''}
+          </div>
+        `;
+      }
+
+      container.innerHTML = html;
+    }
+
+    function selectModalOpt(val) {
+      state.selectedOptions.opt = val;
+      renderModalOptions();
+      renderModalPrice();
+    }
+
+    function toggleCustomTailor(checked) {
+      state.selectedOptions.custom = checked;
+      renderModalOptions();
+    }
+
+    function renderModalPrice() {
+      if (!state.activeProduct) return;
+      const unit = calculateUnitPrice(state.activeProduct, state.selectedOptions.opt);
+      const total = unit * state.activeQty;
+      $('#modalPrice').textContent = formatMoney(unit);
+      $('#modalQtyVal').textContent = state.activeQty;
+      $('#modalAddBtnText').textContent = `Acquire (${formatMoney(total)})`;
+    }
+
+    function renderModalAccordions(p) {
+      const titles = ['Highland Terroir & Sourcing', 'Shipping & Maintenance Ritual', 'Artisan Lineage'];
+      $('#modalAccordions').innerHTML = titles.map((title, i) => `
+        <div class="acc border-b border-linen-200">
+          <button type="button" class="w-full py-2.5 flex items-center justify-between text-left text-xs uppercase font-bold text-pine-950 hover:text-cedar transition"
+                  onclick="this.parentElement.classList.toggle('open')">
+            <span>${title}</span>
+            <svg class="acc-icon w-3.5 h-3.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="acc-body">
+            <div><p class="pb-3 text-xs text-zinc-600 font-light leading-relaxed">${p.story[i]}</p></div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Modal Qty Steppers
+    $('#modalQtyMinus').addEventListener('click', () => {
+      state.activeQty = Math.max(1, state.activeQty - 1);
+      renderModalPrice();
+    });
+    $('#modalQtyPlus').addEventListener('click', () => {
+      state.activeQty++;
+      renderModalPrice();
+    });
+
+    function closeProductModal() {
+      $('#productModal').classList.add('hidden');
+      if (!$('#cartDrawer').classList.contains('open') && $('#searchModal').classList.contains('hidden')) {
+        $('#scrim').classList.remove('open');
+      }
+      document.body.style.overflow = '';
+      state.activeProduct = null;
+    }
+
+    $('#modalCloseBtn').addEventListener('click', closeProductModal);
+    $('#productModal').addEventListener('click', (e) => {
+      if (e.target.id === 'productModal') closeProductModal();
+    });
+
+    $('#modalAddToCartBtn').addEventListener('click', () => {
+      if (!state.activeProduct) return;
+      const p = state.activeProduct;
+      const opt = state.selectedOptions.opt;
+      const price = calculateUnitPrice(p, opt);
+      const notes = [];
+      if (state.selectedOptions.custom) notes.push(`Bespoke Tailoring: ${state.selectedOptions.measurements || 'Measurements Requested'}`);
+
+      addToCart(p, opt, price, state.activeQty, notes.join(' · '));
+      closeProductModal();
+    });
+
+    /* ===== CART DRAWER ===== */
+    function addToCart(p, opt, unitPrice, qty, note = '') {
+      const key = `${p.id}|${opt}|${note}`;
+      const existing = state.cart.find(item => item.key === key);
+
+      if (existing) {
+        existing.qty += qty;
+      } else {
+        state.cart.push({
+          key,
+          id: p.id,
+          name: p.name,
+          img: p.imgs[0],
+          opt,
+          price: unitPrice,
+          qty,
+          note
+        });
+      }
+
+      saveState();
+      renderCart();
+      openCartDrawer();
+      showToast('Acquisition Preserved', `"${p.name}" has been placed in your bag.`);
+    }
+
+    function quickAdd(id) {
+      const p = PRODUCTS.find(x => x.id === id);
+      if (!p) return;
+      const defOpt = getDefaultOption(p);
+      addToCart(p, defOpt, calculateUnitPrice(p, defOpt), 1);
+    }
+
+    function renderCart() {
+      const itemsList = $('#cartItemsList');
+      const countBadge = $('#cartCountBadge');
+      const headerSubtotal = $('#headerSubtotal');
+      const drawerSubtotal = $('#cartDrawerSubtotal');
+      const discountRow = $('#discountRow');
+      const discountVal = $('#cartDiscountVal');
+      const finalTotal = $('#cartFinalTotal');
+      const progressBar = $('#shippingProgressBar');
+      const remainingLabel = $('#shippingRemainingText');
+
+      const totalItems = state.cart.reduce((sum, item) => sum + item.qty, 0);
+      const subtotalUSD = state.cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+      const discountAmountUSD = subtotalUSD * state.discount;
+      const finalUSD = Math.max(0, subtotalUSD - discountAmountUSD);
+
+      countBadge.textContent = totalItems;
+      headerSubtotal.textContent = formatMoney(subtotalUSD);
+      drawerSubtotal.textContent = formatMoney(subtotalUSD);
+
+      if (state.discount > 0) {
+        discountRow.classList.remove('hidden');
+        discountVal.textContent = `-${formatMoney(discountAmountUSD)}`;
+      } else {
+        discountRow.classList.add('hidden');
+      }
+
+      finalTotal.textContent = formatMoney(finalUSD);
+
+      // Shipping Progress
+      const threshold = 100;
+      const progress = Math.min(100, (subtotalUSD / threshold) * 100);
+      progressBar.style.width = `${progress}%`;
+
+      if (subtotalUSD >= threshold) {
+        remainingLabel.textContent = 'Unlocked Free Shipping';
+        remainingLabel.className = 'text-pine-800 font-bold';
+      } else {
+        remainingLabel.textContent = `${formatMoney(threshold - subtotalUSD)} away`;
+        remainingLabel.className = 'text-amberAccent font-bold';
+      }
+
+      if (state.cart.length === 0) {
+        itemsList.innerHTML = `
+          <div class="py-16 text-center text-zinc-500">
+            <p class="font-serif text-2xl text-pine-950 font-medium">Your Bag is Empty</p>
+            <p class="text-xs text-zinc-500 mt-1">Select an authentic creation from our highland archives.</p>
+            <button onclick="closeCartDrawer();" class="mt-6 px-6 py-2.5 rounded-full bg-pine-900 text-linen-50 text-xs font-bold uppercase tracking-wider">
+              Browse Collection
+            </button>
+          </div>
+        `;
+        return;
+      }
+
+      itemsList.innerHTML = state.cart.map((item, idx) => `
+        <div class="pt-4 first:pt-0 flex gap-4">
+          <img src="${item.img}" alt="" class="w-20 h-24 object-cover rounded-2xl border border-linen-200 flex-shrink-0">
+          
+          <div class="flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-start justify-between gap-2">
+                <h4 class="font-serif text-lg font-medium text-pine-950 leading-tight">${item.name}</h4>
+                <span class="font-serif text-sm font-bold text-cedar">${formatMoney(item.price * item.qty)}</span>
+              </div>
+              <p class="text-[11px] text-zinc-500 mt-0.5">${item.opt}</p>
+              ${item.note ? `<p class="text-[10px] text-amberAccent italic mt-0.5">${item.note}</p>` : ''}
+            </div>
+
+            <div class="flex items-center justify-between mt-3 text-xs">
+              <div class="flex items-center border border-linen-300 rounded-full bg-white px-2">
+                <button aria-label="Decrease" class="px-2 py-0.5 text-zinc-700 font-bold" onclick="adjustQty(${idx}, -1)">&minus;</button>
+                <span class="px-2 font-bold text-xs">${item.qty}</span>
+                <button aria-label="Increase" class="px-2 py-0.5 text-zinc-700 font-bold" onclick="adjustQty(${idx}, 1)">+</button>
+              </div>
+
+              <button class="text-[11px] text-zinc-400 hover:text-red-600 underline uppercase tracking-wider" onclick="removeItem(${idx})">
+                Remove
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function adjustQty(idx, delta) {
+      state.cart[idx].qty += delta;
+      if (state.cart[idx].qty <= 0) state.cart.splice(idx, 1);
+      saveState();
+      renderCart();
+    }
+
+    function removeItem(idx) {
+      state.cart.splice(idx, 1);
+      saveState();
+      renderCart();
+      showToast('Item Removed', 'Piece removed from your bag.');
+    }
+
+    function openCartDrawer() {
+      $('#cartDrawer').classList.add('open');
+      $('#scrim').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCartDrawer() {
+      $('#cartDrawer').classList.remove('open');
+      if ($('#productModal').classList.contains('hidden') && $('#searchModal').classList.contains('hidden')) {
+        $('#scrim').classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    }
+
+    $('#cartBtn').addEventListener('click', openCartDrawer);
+    $('#cartDrawerCloseBtn').addEventListener('click', closeCartDrawer);
+
+    $('#scrim').addEventListener('click', () => {
+      closeCartDrawer();
+      closeProductModal();
+      searchModal.classList.add('hidden');
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeCartDrawer();
+        closeProductModal();
+        searchModal.classList.add('hidden');
+      }
+    });
+
+    $('#mobileMenuBtn').addEventListener('click', () => {
+      $('#mobileMenu').classList.toggle('hidden');
+    });
+
+    /* ===== PROMO CODE ===== */
+    $('#applyPromoBtn').addEventListener('click', () => {
+      const code = $('#promoInput').value.trim().toUpperCase();
+      const msg = $('#promoMessage');
+
+      if (code === 'LUXURY10' || code === 'GENX' || code === 'GENX10' || code === 'WOODNEST' || code === 'AMEN10') {
+        state.discount = 0.10;
+        msg.textContent = '✦ Privilege Applied: 10% Patron Courtesy';
+        msg.className = 'text-xs text-pine-800 font-bold block';
+        showToast('Privilege Activated', '10% patron discount deducted from your bag.');
+      } else if (code) {
+        state.discount = 0;
+        msg.textContent = 'Unrecognized code. Please verify.';
+        msg.className = 'text-xs text-red-600 font-semibold block';
+      }
+      renderCart();
+    });
+
+    /* ===== CHECKOUT SIMULATION ===== */
+    $('#checkoutBtn').addEventListener('click', () => {
+      if (state.cart.length === 0) {
+        showToast('Bag is Empty', 'Please add a piece before proceeding to checkout.', false);
+        return;
+      }
+      showToast('Forwarding', 'Forwarding to 256-Bit SSL encrypted global concierge checkout...');
+      setTimeout(() => {
+        alert('Thank you for your order request. In this demonstration, our luxury concierge gateway would process your acquisition. Your order is secured.');
+      }, 700);
+    });
+
+    /* ===== NEWSLETTER ===== */
+    $('#newsletterForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      if ($('#newsEmail').value) {
+        $('#newsSuccess').classList.remove('hidden');
+        showToast('Patron Privilege Registered', '10% courtesy code LUXURY10 is confirmed.');
+        $('#newsEmail').value = '';
+      }
+    });
+
+    /* ===== SANCTUARY CRAFT SLIDER ENGINE (DRESSES & SPICES) ===== */
+    const SANCTUARY_DATA = [
+      {
+        type: 'dress',
+        tabName: 'Habesha Cultural Dresses',
+        badge: 'Dorze Highland Handloom · Living Heritage',
+        title: 'Highland Looms &amp; Ethereal Cotton. <br><span class="italic text-amberAccent">Woven by Dorze Masters.</span>',
+        desc: 'Every Habesha Kemis begins in the cloud forests of Chencha, where master artisans spin raw organic cotton on ancestral drop-spindles. Woven over weeks on vertical wooden looms with intricate gold and crimson tibeb borders, each gown embodies sacred celebration, heirloom beauty, and living cultural dignity.',
+        pillars: [
+          { num: '01', title: 'Ancestral Handloom', text: 'Woven on wooden vertical looms by family guilds in Chencha.' },
+          { num: '02', title: '100% Organic Cotton', text: 'Featherlight, breathable gossamer weave softened naturally.' },
+          { num: '03', title: 'Bespoke Tailoring', text: 'Tailored to individual proportions for weddings &amp; sacred ceremonies.' }
+        ],
+        ctaText: 'Acquire Habesha Dresses',
+        ctaFilter: 'apparel',
+        imgs: ['dress.png', 'dre.png', 'dr3.png'],
+        imgLabels: ['Handwoven Habesha Kemis', 'Sovereign Tilfi Kemis', 'Royal Ceremonial Dorze Dress'],
+        masterQuote: '"When the cotton breathes and the tibeb shines, our heritage lives forever."',
+        masterAuthor: '— Master Weaver Tsegaye, Dorze Cloud Forest',
+        review: {
+          tag: 'Wedding Collector Review',
+          quote: '"The Handwoven Habesha Kemis was the centerpiece of our Melse wedding celebration. The cotton drape and gold tibeb borders took everyone’s breath away."',
+          author: 'Elena Rostova',
+          location: 'Geneva'
+        }
+      },
+      {
+        type: 'spice',
+        tabName: 'Sacred Ethiopian Spices',
+        badge: 'Wollo &amp; Rift Valley Terroir · Sacred Harvesters',
+        title: 'Sun-Cured Chilies &amp; Mountain Korarima. <br><span class="italic text-amberAccent">Stone-Ground in Small Batches.</span>',
+        desc: 'Our sacred spices travel directly from highland family terraces in Wollo and Rift Valley volcanic soils. Sun-cured upon woven reed screens and toasted over hardwood coals, our women-led spice cooperatives stone-grind Authentic Berbere, Shiro, and Mitmita with zero artificial fillers or preservatives.',
+        pillars: [
+          { num: '01', title: 'Single-Terroir Harvest', text: 'Sourced directly from Wollo mountain terraces and Rift Valley farms.' },
+          { num: '02', title: 'Hardwood Ember Toast', text: 'Chilies, cardamom, and cloves toasted gently over aromatic wood coals.' },
+          { num: '03', title: 'Fresh Stone Mill', text: 'Milled monthly in small batches to preserve vital botanical essential oils.' }
+        ],
+        ctaText: 'Acquire Sacred Spices',
+        ctaFilter: 'spices',
+        imgs: ['ber.png', 'shiro.png', 'mit.png', 'berbere.png'],
+        imgLabels: ['Grand Reserve Berbere', 'Pure Highland Shiro', 'Mitmita Fire Blend', 'Wollo Cured Chilies'],
+        masterQuote: '"The secret of sacred spice is patience—letting the sun cure the chili until the oils concentrate."',
+        masterAuthor: '— Master Blender Almaz, Wollo Harvest Guild',
+        review: {
+          tag: 'Master Chef Review',
+          quote: '"The Grand Reserve Berbere and Shiro are unforgettable. You smell the wood-toasted chilies, garlic, and wild mountain korarima the second you open the tin."',
+          author: 'Chef Julian Vance',
+          location: 'New York'
+        }
+      }
+    ];
+
+    let currentSancSlide = 0;
+    let currentSancSubImg = 0;
+    let sancAutoTimer = null;
+
+    function renderSanctuary() {
+      const data = SANCTUARY_DATA[currentSancSlide];
+      const left = $('#sancLeftContent');
+
+      // Update Tabs
+      const tab0 = $('#sancTab0');
+      const tab1 = $('#sancTab1');
+      if (tab0 && tab1) {
+        tab0.className = currentSancSlide === 0
+          ? 'px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 bg-amberAccent text-pine-950 shadow-md flex items-center gap-2'
+          : 'px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 bg-pine-850 hover:bg-pine-800 text-linen-200 flex items-center gap-2';
+
+        tab1.className = currentSancSlide === 1
+          ? 'px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 bg-amberAccent text-pine-950 shadow-md flex items-center gap-2'
+          : 'px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 bg-pine-850 hover:bg-pine-800 text-linen-200 flex items-center gap-2';
+      }
+
+      // Update Dots
+      const dotsGroup = $('#sancDotIndicators');
+      if (dotsGroup && dotsGroup.children.length >= 2) {
+        dotsGroup.children[0].className = currentSancSlide === 0
+          ? 'w-8 h-1.5 rounded-full bg-amberAccent transition-all duration-300'
+          : 'w-3 h-1.5 rounded-full bg-pine-700 hover:bg-pine-600 transition-all duration-300';
+        dotsGroup.children[1].className = currentSancSlide === 1
+          ? 'w-8 h-1.5 rounded-full bg-amberAccent transition-all duration-300'
+          : 'w-3 h-1.5 rounded-full bg-pine-700 hover:bg-pine-600 transition-all duration-300';
+      }
+
+      // Update Left Text
+      if (left) {
+        left.style.opacity = '0';
+        left.style.transform = 'translateY(6px)';
+
+        setTimeout(() => {
+          $('#sancBadge').textContent = data.badge;
+          $('#sancTitle').innerHTML = data.title;
+          $('#sancDesc').textContent = data.desc;
+
+          $('#sancPillars').innerHTML = data.pillars.map(p => `
+            <div class="p-3.5 rounded-2xl bg-pine-850/80 border border-pine-700/60">
+              <span class="text-amberAccent font-bold text-xs block mb-0.5">${p.num}. ${p.title}</span>
+              <p class="text-[11px] text-linen-200/80 leading-snug">${p.text}</p>
+            </div>
+          `).join('');
+
+          $('#sancReviewTag').textContent = data.review.tag;
+          $('#sancReviewQuote').textContent = data.review.quote;
+          $('#sancReviewAuthor').textContent = data.review.author;
+          $('#sancReviewLocation').textContent = data.review.location;
+
+          $('#sancCtaText').textContent = data.ctaText;
+          const ctaBtn = $('#sancCtaBtn');
+          if (ctaBtn) {
+            ctaBtn.onclick = (e) => {
+              e.preventDefault();
+              setCategory(data.ctaFilter);
+              window.location.hash = '#shop';
+            };
+          }
+
+          left.style.opacity = '1';
+          left.style.transform = 'translateY(0)';
+        }, 180);
+      }
+
+      if (currentSancSubImg >= data.imgs.length) currentSancSubImg = 0;
+      updateSancImage();
+      renderSancThumbnails();
+    }
+
+    function updateSancImage() {
+      const data = SANCTUARY_DATA[currentSancSlide];
+      const img = $('#sancMainImg');
+      if (!img) return;
+
+      img.style.opacity = '0';
+      img.style.transform = 'scale(0.98)';
+
+      setTimeout(() => {
+        img.src = data.imgs[currentSancSubImg];
+        img.alt = data.imgLabels[currentSancSubImg];
+        $('#sancImgCounter').textContent = `${currentSancSubImg + 1} / ${data.imgs.length} · ${data.imgLabels[currentSancSubImg]}`;
+        $('#sancMasterQuote').textContent = data.masterQuote;
+        $('#sancMasterAuthor').textContent = data.masterAuthor;
+        img.style.opacity = '1';
+        img.style.transform = 'scale(1)';
+      }, 160);
+
+      const thumbs = $$('#sancThumbStrip button');
+      thumbs.forEach((btn, idx) => {
+        if (idx === currentSancSubImg) {
+          btn.className = 'w-12 h-14 rounded-xl overflow-hidden border-2 border-amberAccent scale-105 transition-all flex-shrink-0 shadow-md';
+        } else {
+          btn.className = 'w-12 h-14 rounded-xl overflow-hidden border border-pine-700 opacity-60 hover:opacity-100 transition-all flex-shrink-0';
+        }
+      });
+    }
+
+    function renderSancThumbnails() {
+      const data = SANCTUARY_DATA[currentSancSlide];
+      const strip = $('#sancThumbStrip');
+      if (!strip) return;
+      strip.innerHTML = data.imgs.map((src, idx) => `
+        <button onclick="selectSancSubImg(${idx})" aria-label="${data.imgLabels[idx]}"
+          class="w-12 h-14 rounded-xl overflow-hidden ${idx === currentSancSubImg ? 'border-2 border-amberAccent scale-105 shadow-md' : 'border border-pine-700 opacity-60 hover:opacity-100'} transition-all flex-shrink-0">
+          <img src="${src}" alt="" class="w-full h-full object-cover">
+        </button>
+      `).join('');
+    }
+
+    function switchSanctuarySlide(index) {
+      if (currentSancSlide === index) return;
+      currentSancSlide = index;
+      currentSancSubImg = 0;
+      renderSanctuary();
+      resetSancTimer();
+    }
+
+    function nextSanctuarySlide() {
+      currentSancSlide = (currentSancSlide + 1) % SANCTUARY_DATA.length;
+      currentSancSubImg = 0;
+      renderSanctuary();
+      resetSancTimer();
+    }
+
+    function prevSanctuarySlide() {
+      currentSancSlide = (currentSancSlide - 1 + SANCTUARY_DATA.length) % SANCTUARY_DATA.length;
+      currentSancSubImg = 0;
+      renderSanctuary();
+      resetSancTimer();
+    }
+
+    function selectSancSubImg(idx) {
+      currentSancSubImg = idx;
+      updateSancImage();
+      resetSancTimer();
+    }
+
+    function nextSancSubImg(e) {
+      if (e) e.stopPropagation();
+      const data = SANCTUARY_DATA[currentSancSlide];
+      currentSancSubImg = (currentSancSubImg + 1) % data.imgs.length;
+      updateSancImage();
+      resetSancTimer();
+    }
+
+    function prevSancSubImg(e) {
+      if (e) e.stopPropagation();
+      const data = SANCTUARY_DATA[currentSancSlide];
+      currentSancSubImg = (currentSancSubImg - 1 + data.imgs.length) % data.imgs.length;
+      updateSancImage();
+      resetSancTimer();
+    }
+
+    function resetSancTimer() {
+      clearInterval(sancAutoTimer);
+      sancAutoTimer = setInterval(nextSanctuarySlide, 8000);
+    }
+
+    /* ===== INIT ===== */
+    document.addEventListener('DOMContentLoaded', () => {
+      $('#wishCount').textContent = state.wishlist.size;
+      renderGrid();
+      renderCart();
+      renderSanctuary();
+      resetSancTimer();
+    });
+  </script>
+
+</body>
+
+</html>
